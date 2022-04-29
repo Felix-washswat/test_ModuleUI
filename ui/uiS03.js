@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Component } from "react/cjs/react.production.min";
+import uuid from "react-native-uuid";
 
 export class uiS03 extends Component {
   constructor(jsonData, objectStorage, parent) {
     super(jsonData);
     this.state = {
       imageUrl: { uri: jsonData.imageUrl },
+      uiKey: "UI_S03:" + uuid.v4(),
     };
     this.parentObject = parent;
   }
@@ -29,7 +31,7 @@ export class uiS03 extends Component {
 
   render() {
     return (
-      <View key="UI_S03" style={this.style.main}>
+      <View key={this.state.uiKey} style={this.style.main}>
         <Image
           style={{ width: "100%", height: 110 }}
           source={this.state.imageUrl}

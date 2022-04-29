@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Component } from "react/cjs/react.production.min";
+import uuid from "react-native-uuid";
 import { debug } from "../debug";
 
 export class uiS02 extends Component {
@@ -12,6 +13,7 @@ export class uiS02 extends Component {
       targetObjectName: jsonData.buttonTarget,
       objectStorage: objectStorage,
       targetText: "test",
+      uiKey: "UI_S02:" + uuid.v4(),
     };
     this.parentObject = parent;
   }
@@ -45,7 +47,7 @@ export class uiS02 extends Component {
 
   render() {
     return (
-      <View key="UI_S02" style={this.style.main}>
+      <View key={this.state.uiKey} style={this.style.main}>
         <Text>{this.state.text1}</Text>
         <Text>{this.state.text2}</Text>
         <Button

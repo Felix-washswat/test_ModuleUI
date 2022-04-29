@@ -1,11 +1,13 @@
 import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Component } from "react/cjs/react.production.min";
+import uuid from "react-native-uuid";
 
 export class uiN01 extends Component {
   constructor(jsonData, objectStorage, parent) {
     super(jsonData);
     this.state = {
       buttonText: "Back Button",
+      uiKey: "UI_N01:" + uuid.v4(),
     };
     this.parentObject = parent;
   }
@@ -30,7 +32,7 @@ export class uiN01 extends Component {
   render() {
     console.log("N01,render");
     return (
-      <View key="UI_N01" style={this.style.main}>
+      <View key={this.state.uiKey} style={this.style.main}>
         <Text>{this.state.buttonText}</Text>
       </View>
     );

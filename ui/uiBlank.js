@@ -2,9 +2,10 @@ import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Component } from "react/cjs/react.production.min";
 
 export class uiBlank extends Component {
-  constructor(jsonData, objectStorage) {
+  constructor(jsonData, objectStorage, parent) {
     super(jsonData);
     this.state = {};
+    this.parentObject = parent;
   }
 
   style = StyleSheet.create({

@@ -3,7 +3,7 @@ import { Component } from "react/cjs/react.production.min";
 import { debug } from "../debug";
 
 export class uiS02 extends Component {
-  constructor(jsonData, objectStorage) {
+  constructor(jsonData, objectStorage, parent) {
     super(jsonData);
     this.state = {
       text1: jsonData.text1,
@@ -12,6 +12,7 @@ export class uiS02 extends Component {
       targetObjectName: jsonData.buttonTarget,
       objectStorage: objectStorage,
     };
+    this.parentObject = parent;
   }
 
   style = StyleSheet.create({

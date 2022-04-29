@@ -2,11 +2,12 @@ import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Component } from "react/cjs/react.production.min";
 
 export class uiS03 extends Component {
-  constructor(jsonData, objectStorage) {
+  constructor(jsonData, objectStorage, parent) {
     super(jsonData);
     this.state = {
       imageUrl: { uri: jsonData.imageUrl },
     };
+    this.parentObject = parent;
   }
 
   style = StyleSheet.create({

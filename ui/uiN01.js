@@ -2,11 +2,12 @@ import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
 import { Component } from "react/cjs/react.production.min";
 
 export class uiN01 extends Component {
-  constructor(jsonData, objectStorage) {
+  constructor(jsonData, objectStorage, parent) {
     super(jsonData);
     this.state = {
       buttonText: "Back Button",
     };
+    this.parentObject = parent;
   }
 
   style = StyleSheet.create({
@@ -20,10 +21,10 @@ export class uiN01 extends Component {
   });
 
   process(stringData) {
-    console.log("N01, process");
-    Alert.alert("N01 processed received: " + stringData);
+    console.log("N01, process. stringData="+stringData);
     this.state.buttonText = stringData;
-    this.setState({});
+    this.parentObject.process('Reload');
+    Alert.alert("N01 processed received: " + stringData);
   }
 
   render() {

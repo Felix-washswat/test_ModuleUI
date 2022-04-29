@@ -11,6 +11,7 @@ export class uiS02 extends Component {
       buttonText: jsonData.buttonText,
       targetObjectName: jsonData.buttonTarget,
       objectStorage: objectStorage,
+      targetText: "test",
     };
     this.parentObject = parent;
   }
@@ -29,11 +30,15 @@ export class uiS02 extends Component {
 
   handlePress() {
     let target = this.state.targetObjectName;
-    // let objectStorage = this.state.objectStorage;
-    // Alert.alert("inside clicked:" + this.state.buttonText);
+    let targetText = this.state.targetText;
+    if (this.state.targetText == "test") {
+      this.state.targetText = "next text";
+    } else {
+      this.state.targetText = "test";
+    }
     this.state.objectStorage.forEach(function (element) {
       if (element.id == target) {
-        element.object.process("test");
+        element.object.process(targetText);
       }
     });
   }

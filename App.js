@@ -42,25 +42,27 @@ let objectStorage = [];
 // Main Routine
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 class App extends Component {
-  constructor()
-  {
+  constructor() {
     super();
-    console.log('App constructor');
+    console.log("App constructor");
     objectStorage = [];
   }
   state = {
     count: 0,
-    isRefresh: false
-  }
+    isRefresh: false,
+  };
 
-  process(stringData)
-  {
+  process(stringData) {
     this.state.isRefresh = true;
     this.setState({});
-    console.log('App:process='+stringData);
+    console.log("App:process=" + stringData);
   }
-  render(){
-    return <View style={styles.container}>{processScreen(this, this.state.isRefresh)}</View>;
+  render() {
+    return (
+      <View style={styles.container}>
+        {processScreen(this, this.state.isRefresh)}
+      </View>
+    );
   }
 }
 
@@ -79,16 +81,19 @@ const styles = StyleSheet.create({
 function processScreen(parent, isRefresh) {
   const returnData = [];
 
-  if(!isRefresh)
-  {
-  // Analysis UI JSON data and populate object instances
-  jsonData.elements.forEach(function (element) {
-    debug("-->" + element.id, element);
-    objectStorage.push({
-      id: element.id,
-      object: new (uiClassFactory(element.id))(element, objectStorage, parent),
+  if (!isRefresh) {
+    // Analysis UI JSON data and populate object instances
+    jsonData.elements.forEach(function (element) {
+      debug("-->" + element.id, element);
+      objectStorage.push({
+        id: element.id,
+        object: new (uiClassFactory(element.id))(
+          element,
+          objectStorage,
+          parent
+        ),
+      });
     });
-  });
   }
 
   // Render them

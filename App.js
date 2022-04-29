@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Alert, Button, Image } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Component } from "react/cjs/react.production.min";
 import uiClassFactory from "./ui/uiClassFactory";
 import { debug } from "./debug";
@@ -10,6 +10,7 @@ const jsonData = {
     },
     {
       id: "uiN01",
+      color: "blue",
     },
     {
       id: "uiS01",
@@ -31,7 +32,7 @@ const jsonData = {
     {
       id: "uiS01",
       text1: "이것은",
-      text2: "테스트입니다.",
+      text2: "테스트입니다. 강아지 고양이 야용",
     },
   ],
 };

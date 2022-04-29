@@ -19,6 +19,6 @@ export class uiBlank extends Component {
   });
 
   render() {
-    return <View Key="UI_Blank" style={this.style.main}></View>;
+    return <View key="UI_Blank" style={this.style.main}></View>;
   }
 }

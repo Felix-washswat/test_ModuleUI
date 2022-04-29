@@ -29,7 +29,7 @@ export class uiS03 extends Component {
 
   render() {
     return (
-      <View Key="UI_S03" style={this.style.main}>
+      <View key="UI_S03" style={this.style.main}>
         <Image
           style={{ width: "100%", height: 110 }}
           source={this.state.imageUrl}

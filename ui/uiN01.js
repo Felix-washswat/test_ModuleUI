@@ -21,16 +21,16 @@ export class uiN01 extends Component {
   });
 
   process(stringData) {
-    console.log("N01, process. stringData="+stringData);
+    console.log("N01, process. stringData=" + stringData);
     this.state.buttonText = stringData;
-    this.parentObject.process('Reload');
+    this.parentObject.process("Reload");
     Alert.alert("N01 processed received: " + stringData);
   }
 
   render() {
     console.log("N01,render");
     return (
-      <View Key="UI_N01" style={this.style.main}>
+      <View key="UI_N01" style={this.style.main}>
         <Text>{this.state.buttonText}</Text>
       </View>
     );

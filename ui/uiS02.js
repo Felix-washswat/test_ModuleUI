@@ -45,7 +45,7 @@ export class uiS02 extends Component {
 
   render() {
     return (
-      <View Key="UI_S02" style={this.style.main}>
+      <View key="UI_S02" style={this.style.main}>
         <Text>{this.state.text1}</Text>
         <Text>{this.state.text2}</Text>
         <Button
